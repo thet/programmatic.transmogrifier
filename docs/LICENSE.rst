@@ -1,4 +1,4 @@
-transmogrifier.programmatic Copyright 2015, Johannes Raggam
+programmatic.transmogrifier Copyright 2015, Johannes Raggam
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

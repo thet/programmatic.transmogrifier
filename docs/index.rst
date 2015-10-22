@@ -1,5 +1,5 @@
 ====================
-transmogrifier.programmatic
+programmatic.transmogrifier
 ====================
 
 User documentation

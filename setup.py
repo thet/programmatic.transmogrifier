@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the transmogrifier.programmatic package."""
+"""Installer for the programmatic.transmogrifier package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -18,7 +18,7 @@ long_description = (
 
 
 setup(
-    name='transmogrifier.programmatic',
+    name='programmatic.transmogrifier',
     version='1.0a1',
     description="Transmogrifier Pipeline and Blueprint for programmatic",
     long_description=long_description,
@@ -35,10 +35,10 @@ setup(
     keywords='Python Plone',
     author='Johannes Raggam',
     author_email='thetetet@gmail.com',
-    url='https://pypi.python.org/pypi/transmogrifier.programmatic',
+    url='https://pypi.python.org/pypi/programmatic.transmogrifier',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['transmogrifier'],
+    namespace_packages=['programmatic'],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
