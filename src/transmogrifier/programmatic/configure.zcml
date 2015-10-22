@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="transmogrifier.programmatic">
+
+  <includeDependencies package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="transmogrifier.programmatic"
+      directory="profiles/default"
+      description="Installs the transmogrifier.programmatic add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="transmogrifier.programmatic-postInstall"
+      title="transmogrifier.programmatic post_install import step"
+      description="Post install import step from transmogrifier.programmatic"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+</configure>
