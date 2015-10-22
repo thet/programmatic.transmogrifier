@@ -6,6 +6,9 @@
     i18n_domain="transmogrifier.programmatic">
 
   <includeDependencies package="." />
+  <include package="collective.jsonmigrator" />
+  <include package="transmogrify.dexterity" />
+  <include package=".pipeline" />
 
   <genericsetup:registerProfile
       name="default"
@@ -16,3 +19,4 @@
       />
 
 </configure>
+

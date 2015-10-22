@@ -1,72 +1,17 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide_addons.html
-   This text does not appear on pypi or github. It is a comment.
-
-==============================================================================
 transmogrifier.programmatic
-==============================================================================
+===========================
 
-Tell me what your product does
-
-Features
---------
-
-- Can be bullet points
+Basic transmogrifier pipeline to migrate plone sites from collective.jsonify created sources.
 
 
-Examples
---------
+1) Export content via collective.jsonify from the Plone source site.
+Install following these instructions: https://github.com/collective/collective.jsonify/blob/master/docs/install.rst
+Export content by using the exporter: https://github.com/collective/collective.jsonify/blob/master/docs/install.rst#using-the-exporter
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+2) Import by using mr.migrator into the Plone target site.
+Open the ``@@mr.migrator`` on your Plone site root, select a pipeline and run it. Start by using the
+"transmogrifier.programmatic - 1 - migrate content: migrate main content" pipeline and then the
+"transmogrifier.programmatic - 2 - migration postwork: fix layout, add lat/lng, remove admin creator, fix dates".
 
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
-
-Installation
-------------
-
-Install transmogrifier.programmatic by adding it to your buildout::
-
-    [buildout]
-
-    ...
-
-    eggs =
-        transmogrifier.programmatic
-
-
-and then running ``bin/buildout``
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/transmogrifier.programmatic/issues
-- Source Code: https://github.com/collective/transmogrifier.programmatic
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
-
-License
--------
-
-The project is licensed under the GPLv2.
+Done.
+If you forgot simething important, you can create another pipeline using blueprints which modify existing content or create new one. This workflow is fine, as long the site structure isn't changed.
