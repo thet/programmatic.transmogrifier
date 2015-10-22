@@ -6,7 +6,6 @@ from collective.transmogrifier.interfaces import ISection
 from collective.transmogrifier.interfaces import ISectionBlueprint
 from collective.transmogrifier.utils import traverse
 from datetime import date
-from geopy.geocoders import Nominatim
 from plone.event.utils import pydt
 from zope.interface import classProvides
 from zope.interface import implements
@@ -14,9 +13,14 @@ import logging
 import re
 
 try:
+    from geopy.geocoders import Nominatim
+except ImportError:
+    Nominatim = None
+
+try:
     from collective.geolocationbehavior.geolocation import IGeolocatable
     from plone.formwidget.geolocation.geolocation import Geolocation
-except:
+except ImportError:
     IGeolocatable = None
     Geolocation = None
 
@@ -647,7 +651,8 @@ class TypeMapper(object):
             item['text'] = cleanup_text(image_scale_fixer(text))
 
         # Project specific thingy...
-        if item['_type'] in ('Person', 'Company', 'Organization'):
+        if Nominatim\
+                and item['_type'] in ('Person', 'Company', 'Organization'):
             street = item.get('street', None)
             if street:
                 address = ' '.join([it for it in [
