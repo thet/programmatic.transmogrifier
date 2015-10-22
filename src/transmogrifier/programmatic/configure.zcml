@@ -7,11 +7,6 @@
 
   <includeDependencies package="." />
 
-  <i18n:registerTranslations directory="locales" />
-
-  <include package=".browser" />
-
-
   <genericsetup:registerProfile
       name="default"
       title="transmogrifier.programmatic"
@@ -19,12 +14,5 @@
       description="Installs the transmogrifier.programmatic add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
-  <genericsetup:importStep
-      name="transmogrifier.programmatic-postInstall"
-      title="transmogrifier.programmatic post_install import step"
-      description="Post install import step from transmogrifier.programmatic"
-      handler=".setuphandlers.post_install">
-  </genericsetup:importStep>
 
 </configure>

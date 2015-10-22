@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<layers>
-  <layer
-      name="transmogrifier.programmatic"
-      interface="transmogrifier.programmatic.interfaces.ITransmogrifierProgrammaticLayer"
-      />
-</layers>

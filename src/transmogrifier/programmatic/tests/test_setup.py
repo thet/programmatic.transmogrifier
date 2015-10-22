@@ -21,13 +21,6 @@ class TestSetup(unittest.TestCase):
         self.assertTrue(self.installer.isProductInstalled(
             'transmogrifier.programmatic'))
 
-    def test_browserlayer(self):
-        """Test that ITransmogrifierProgrammaticLayer is registered."""
-        from transmogrifier.programmatic.interfaces import (
-            ITransmogrifierProgrammaticLayer)
-        from plone.browserlayer import utils
-        self.assertIn(ITransmogrifierProgrammaticLayer, utils.registered_layers())
-
 
 class TestUninstall(unittest.TestCase):
 
