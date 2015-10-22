@@ -45,7 +45,13 @@ setup(
     install_requires=[
         'plone.api',
         'setuptools',
-        'z3c.jbot',
+        # Migration related dependencies
+        'collective.jsonify',
+        'collective.jsonmigrator',
+        'collective.transmogrifier',
+        'mr.migrator',
+        'plone.app.transmogrifier',
+        'transmogrify.dexterity',
     ],
     extras_require={
         'test': [
