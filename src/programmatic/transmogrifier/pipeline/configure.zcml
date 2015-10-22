@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:transmogrifier="http://namespaces.plone.org/transmogrifier"
+    xmlns:gs="http://namespaces.zope.org/genericsetup">
+
+  <transmogrifier:registerConfig
+      name="programmatic.transmogrifier.migration.migrate_content"
+      title="programmatic.transmogrifier - 1 - migrate content: migrate main content"
+      configuration="migration_content.cfg"
+      />
+  <transmogrifier:registerConfig
+      name="programmatic.transmogrifier.migration.migrate_postwork"
+      title="programmatic.transmogrifier - 2 - migration postwork: fix layout, add lat/lng, remove admin creator, fix dates"
+      configuration="migration_postwork.cfg"
+      />
+
+  <utility
+      component=".blueprints.TypeMapper"
+      name="programmatic.transmogrifier.migration.typemapper"
+      />
+
+  <utility
+      component=".blueprints.LatLngUpdater"
+      name="programmatic.transmogrifier.migration.latlngupdater"
+      />
+
+  <utility
+      component=".blueprints.RemoveCreator"
+      name="programmatic.transmogrifier.migration.removecreator"
+      />
+
+  <utility
+      component=".blueprints.StateFixer"
+      name="programmatic.transmogrifier.migration.statefixer"
+      />
+
+</configure>

@@ -23,5 +23,4 @@ output.xml
 parts/
 pip-selfcheck.json
 report.html
-src/*
 var/
