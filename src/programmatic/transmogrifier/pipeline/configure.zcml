@@ -6,12 +6,12 @@
   <transmogrifier:registerConfig
       name="programmatic.transmogrifier.migration.migrate_content"
       title="programmatic.transmogrifier - 1 - migrate content: migrate main content"
-      configuration="migration_content.cfg"
+      configuration="migrate_content.cfg"
       />
   <transmogrifier:registerConfig
       name="programmatic.transmogrifier.migration.migrate_postwork"
       title="programmatic.transmogrifier - 2 - migration postwork: fix layout, add lat/lng, remove admin creator, fix dates"
-      configuration="migration_postwork.cfg"
+      configuration="migrate_postwork.cfg"
       />
 
   <utility
