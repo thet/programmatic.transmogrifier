@@ -26,19 +26,6 @@ except ImportError:
 
 logger = logging.getLogger("programmatic.transmogrifier typemapper")
 
-# TODO:
-# OK # * excludeFromNav
-# OK # * exclude lineage_registry
-# * activate subsites
-# OK # * keep UIDs
-
-# * set default pages in 2nd run
-# * set Subjects
-# * fix image urls in texts:
-#       http://goetzis.programmatic.pro/kultur-freizeit-sport/sport-und-freizeitanlagen/sport-und-freizeitanlagen/resolveuid/6f31a37c43a04ab3b3200f2c322b1352/image_portlet-links
-#       http://goetzis.programmatic.pro/kultur-freizeit-sport/sport-und-freizeitanlagen
-#       http://goetzis.programmatic.pro/ortsportrait/tourismusinfo
-
 
 USER_MAP = {}
 TRANSITION_MAP = {
@@ -373,7 +360,6 @@ def localroles_fixer(item):
 
 
 def layout_mapper(item):
-
     layout = item.get('_layout')
     if layout and layout in LAYOUT_MAP.keys():
         item['_layout'] = LAYOUT_MAP[layout]
