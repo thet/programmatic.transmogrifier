@@ -4,12 +4,13 @@
     xmlns:gs="http://namespaces.zope.org/genericsetup">
 
   <transmogrifier:registerConfig
-      name="programmatic.transmogrifier.migration.migrate_content"
+      name="programmatic_transmogrifier_migration_migrate_content"
       title="programmatic.transmogrifier - 2 - migrate content: migrate main content"
       configuration="migrate_content.cfg"
       />
+
   <transmogrifier:registerConfig
-      name="programmatic.transmogrifier.migration.migrate_postwork"
+      name="programmatic_transmogrifier_migration_migrate_postwork"
       title="programmatic.transmogrifier - 3 - migration postwork: fix layout, add lat/lng, remove admin creator, fix dates"
       configuration="migrate_postwork.cfg"
       />
